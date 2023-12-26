@@ -24,3 +24,25 @@ type MyReadonly<T> = {
 - https://github.com/type-challenges/type-challenges/issues/19940
 - https://www.totaltypescript.com/concepts/propertykey-type
 
+### [First of Array](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md)
+[Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCMAsEFoIDECWAnAzgFwgewDMIBBddAQwE9JEE76aAjSkgO2wAs9WXkBXCAAoAAuXYE+ASggBiAKblMLGeTJUwNGVogBFPnJypuGqAEkAtgAcANnPNz2EchADmDuelQBjCAAM0WNgAPAAqAHy+EJzkuNjkANYGTqwkaiy+IZFiACYQ6HLYfOismBCo2KUEGDgQcrb27ADkpdiUlnIAdCYoeOi1AB7kVrYAXN2+ExU0re1OZNAQALwQANqN5I0ANBCNjFs7Xo0AutNtcnPoAExLqwDM25fb0CensxwK2QvLAThBqujQMIQYDAAbtLzYOS5bB4CCMc7rRqvc7vcjZa7farBf6XIEgsFyCFQqKw+EQW40Ca+bpAgBqqDkAHd8CkAOLlAASfEYIwgHGw2EsmBGIIqXg4HQAVpgOr0XMA4GAQMANKAIAB9TVa7VaiAATTwRQgAGE8NlzhyPOcdTbNRBlRoZucfsEQgNIaxsqUxJQVkcgcsQmtbKwXJxju6HF6IAAGCAAfggrDkADcPBBeUGYy81babRAQgZcMbFEk8zr7SrUFZerEzhAAN4QACiAEc+ORrNtm-1wbgAL4QAjoPDmHbCJ0IcWdkNuTDAPjYVDWTBIsBOiBeUulZYrGg9vtBNsd6xBF1BFb3CCPGD+7a3MJhTb73uE4LHztnrEXwTSRZA6BLivJtyF5HBPFDCB+zvIQ-wAoDH2fKADzfI920-c8-SfJNUw8RCX0PD9T0wvhPTkKpk2yGDSPNCioXwl4Nw8EcsBuPcoHxCdMAQORXwhHiyF6Ghz0aVg8GwUgKEoRonxoTiKh4vjsAEljhO-JsY15dY0gAGVQRJGig2ScxADVy11fh0E4dMAGVISFMzzPVSswFAGggRsjhVHOShDT6TA8GsRcjBKXl+UFYVRUwcUpRlOUFVgYAxEwRkPHciB6SZCAAqCpduGFPkBSFEVgDFCVpVldB5TgYAcuC-L0oAWV6c5jS86xZwMMKisi0rovKuKqqVFUgA)
+
+**[Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) が重要**
+
+```
+SomeType extends OtherType ? TrueType : FalseType;
+```
+
+のような書き方をする。
+
+サンプル
+```
+type NameOrId<T extends number | string> = T extends number
+  ? IdLabel
+  : NameLabel;
+```
+
+**T['length'] で Array の length が取得できる**
+
+他に[infer を使った回答](https://github.com/type-challenges/type-challenges/issues/16315)もあった。
+[infer](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types)
