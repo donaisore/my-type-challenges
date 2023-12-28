@@ -51,3 +51,31 @@ type NameOrId<T extends number | string> = T extends number
 [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCMAcEFoIBkCmA7A5gFwBYQHsAzCAFQFcAHAG1UkQUafoCMBPCAZwEt0CD0EABQABHnwEBKCAGJAuEqAsX1nYqtMPRmaIgK5jA8qrqogfoZA6wyBrhgAGpc4CSGQOvKgRQZAa8qAohkCADIF0GQHYMJ058DuqYCqDNaAK-GAmgyA0ermaFh4ADykAHw2gPnagKMRgOoMgH4MoYBADAYQgNHygBIMgA4MgFj-+eZV2Jz02GyUqBDYqJzUAIYQALwQANoA5C1t7f0ANBD9ALYEACao1BAAzGMT03MLABorU7PzEACa-QC6dQ1NnJTtAMaoG919-QBiAILIAMIA8gByEACc2y93t8IAAJACizwAaodxv0ACIAJWeAHFvtsAMqkZ4I9EggCSAAVtiCAKoAWWeP3RBOebzBj2QeORINIx3y9UazVaHWiOHwPV5cSGHQSUGAwAgqAAHo0ri0ZhAACynTkXa63QX8lAYPmxNU3Dai8WSmWoOWoBUAVnoVXM+VFyO42BB5BYgHMGQBdHoBYqNCgGiGMq4bDYSicABc4pqV1wADoAFacaMEABOmGAcGAsfaYBAwHUoAgAH0i8WS8WIIBlBnLgGsGQDNDIAfhkAkwzWQAYUYBTRULpc7BYgOfUHKamviJpa6BmnAgSdQ7RmAmoHHa6DYvSOop6pAGtBiuDZYHzXc7EEAYwyAToZABMMgEaGOvHjv7su97iTSjJ7DNM4QADeEDBAEdyO1qOMYKmnKEAAL4QEQSYEJMEwiP2CBRv+m6YK0wDkNg3DUJw-TqFcAicC+wqdD0AxEdsax7MssIUZs5G7AshxHBA7Tjnh6AEWAbEEVwlwGvcAyAp8Pz-LCgnAuCUIwhMiIomisKYtiuKEsS5KUhA1K0vSjLMqyTEsRAXHYH2b5XCxrT8fQQGytgsQ-n+1CxIO-bEFywwJOMioJO5lnATZdn-o5OpCmcLn6rc7kQJaXmjPQxpwZwCDStZiVJlBSb0IOUUxWKErxYlvkpWlGVBbgsT9Lg8zUAQEAAO7JtQMz9N5Jy7iAN63t2gCE1p4x6HoAwwzGO1t49rmoD0KKgDHkYAKt7WIAjoqAJDmfoBkGIbhsAkYxvGiYpmmsDAAunA1agSYZlmUCTTNgDRkf6gbBmGEacFGcYJsmqbppwBDUOh3D4eNEBeIAa3KeIATVGADIZy13WtG3PdtqaZtmuZAA)
 
 **T['length'] で長さが取れる**
+
+### [Exclude](https://github.com/type-challenges/type-challenges/blob/main/questions/00043-easy-exclude/README.ja.md)
+[Answer](https://www.typescriptlang.org/play?ssl=21&ssc=1&pln=22&pc=1#code/PQKgUABBAsDMEFoIFEAeBjANgVwCYFNJEETSiAjATwgC0ALfRgOwHMIAKAAQC8HmWAlBADEgXCVAWL4jy2AJaYALghlMR2JjID2TMEWF6IgK5jA8qo6ogEV9A-gyAe+IuA7BkDR6oDOGQD8MgMYZAxQyArhg8ADNFjx8CAAeABUAGggAVQA+H0AkhkB-eUAKV0BtBkAtBkBABh8on0BrBkAnJUAohkBlfUAzBkB75UBfgMArBnt4n1CfQGkGQEiGQBM0wDRNQE0GQGiGesB87UBRiMB1BkA-Bm7AIAZTCEBo+UAJBkAHBkAsf5mfdfkAZyJ5SgAHIIAlfE3sBQgAXggAWUp-HAJggHIAQyeIAB8IJ-J3r6f0E9Iq8njEIMBgN9fp9voCiOsfDMwQBxGTyAAS2HIgHMGQBdHoBYqL6yzo8nke02AC4IVt0HQAHQAK02dI0ACcWMA4MAGS8wCBgDpQBAAPqisXisUQQDKDFK8oBmhmcgEmGeKADCjAKaKIolWuFEH5Ol2BxudwwD3wYUisUuEFCEHwqHk+CYuE20QgAH4IEx8AA3fCsiAU60AbkFIE12vFEFcgE6GQATDIBGhmc0fDEdFuoFMgAtns2fIIAaggBvFAAR2wL0wkTQB3QeYAvhAAGasjSZ76cAsIWkVzCOlgnYDYeRyTZPfX7ILoF6bE5WgDaRGr+FrwWQZYrwVu90CzzeMJ+f1hQO+bxiwOh-0BMTPi9QNfkq-XmE3xoCjxB+4vR+Be-+vzPR7XuEt73o+5bPluJo7ps8issobBfEw2CZuQfowuw7BCBcYLehoMi4AIkQAGJqLWmhMABMFwawMJIShfpAWAAC6oYpqmECAITWtjRq4gDDDIA6wxsRG6ZgKARBgoAx5GACre8SAI6KgCQ5kSJJkpS1KbLSjLMmyHJci8TCbAA7n63K8lAkkyYA0ZG9MSpLklSwA0vSTIsuynKwMAmwaDgw5aNsZkQIAugy2IAa3K2IATVGADIZNkqfZjmaS5HI8nyApAA)
+
+ConditionalType と never の組み合わせがポイント
+
+```typescript
+type MyExclude<T, U> = T extends U ? never : T;
+
+// ↓ 'c'
+MyExclude<'a' | 'b' | 'c', 'a' | 'b'>
+```
+
+上記が確定する流れは
+
+```typescript
+('a' extends 'a' | 'b' ? never : T) | ('b' extends 'a' | 'b' ? never : T) | ('c' extends 'a' | 'b' ? never : T)
+never | never | 'c'
+'c'
+```
+
+なので
+
+```typescript
+MyExclude<'a' | 'b' | 'c', 'a' | 'b' | 'c'>
+```
+
+は `never | never | never` で `never` になる。
