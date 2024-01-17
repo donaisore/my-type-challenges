@@ -24,3 +24,34 @@
 - in を使って loop する
 - as による type assertion(Omit と同じ)
 - readonly な型と readonly でない型を作り、 `&` で組み合わせる
+
+### [Deep Readonly](https://github.com/type-challenges/type-challenges/blob/main/questions/00009-medium-deep-readonly/README.ja.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCcELQQCIFNkAcICVkEMAmA9gHYA2AnpPHNTZQEZkQCCRALgBbGMBiArhAAoAAjjYAzXgEoIAYkC0coCxfWQCdchUoxkE6AK2QBjVnADWyMgGdZeVGjCUZDiICuYwPKqdqICqGQGsMgDoZA5QyA9QyAEwyAdgyAmgyAngyAZgwhgIsMgJcMgIcMgD8MgP0MyYAQ-4BSDIARDIDODIC6DCGArQxe3v7BgEkMgLGKgAx6gCFugNYMgJD-lYC1UYD+DIBryoBRDIBAOoAUro1hgNEMAAYo6Nj4xOQAPAAqAHxjlYD52oCjEYDqDIB+DGGAQAzuEIDKDCGATVGAMhmA5gyA9gzlgaEdlYCORoDGDFGAIgwjgBYMgM8GgFnaWyigHkGQAGDIBVBg++0AsomAdCVAIAMgCLUwAOpvCAvFAJ0MgCsGQCWDDdAMABgDtDUaAUf1AIGRN0AQgw9HaAbQZAMkM+y2gGkGLbwwD3yoBfgKxgAU0nqADctAKAMWMAjQzJDGVQDVDIAFhmSo2O3yu8MAV4GAMCVlYBquMagERjQBkRvLvoAZBiugFkGPaHSiAaPlABIMgAcGI5jR2scyUVhkNDICAADQgAF4IABvShQAAeAC5A8GoBAcBGAIxRqB0CMAcnYAEsU1GAL5Rsip9hmLNQXOu92egCiIY9hmQeD9kejEFUMw0EHDjabzbUs0YsYgCa73db5AgyYgaczOajLfUo-zE8LZGLEFLUDdHogCwIhAbkzQ0znZDmXqWEGAwAg5k4vBI9bonvMOAAtp6cJYxlWa6w62NKI6-0oM8AHF01YAAJXg6CuQAuj0AWKjRkALH-2FYVg0HMMML2dfR2AAOh0cxcIIZQAHNgGgYAdBwMAQGAOxQAgAB9ZiWNYliTmORpAGaGZJAEmGSpAAwowBTRSYtixMYiBaLsDdPX3Q9e0WM9-SDaNZ17CAAG0AGkIHTIgIFMMgCDELcAF0I0M4yt200yIGQEMfyIPBLCIZAADdkGUCAAH5rK02yIzknsNEWGyljAUsGPEsSIEAMYYMSCMUMVE6L2Kk9NnzQYjWAgGTAwgCsAEdeBwEgABoCurAwcuzCAxGUAhnwnIQZLgHDSpIZAiBI5BzGAXhWHTEhzCzMB9GIcwcvrZTKH7ARpF9M8ACYloiuxxqISa6obea-WW1awDy7gCAIRSGwWDTLJMhZTMO8sIAAIRwLz-WO06ZKsvBwryp6AC8GzeuYPpMsRwruzd9HfXqGw0ygv2quYipKkg5iCkdjy9OMlgq+HazwLHsbhqrDER4rStRmx5JCr0luxyrvzrWnCdu8HPUxhsVJjCNdsWiAVvoCNJuUPSSMofQI05qA8AjOgTs60Qo2QCXEwgEjlaHKB2HVjWoHTCNWGUXhkBVpsdFTIWRZXIdcx14wC2QEgSAIK3oxtrsSAjWGdcnFMypNzsdefT20yLW6dezP2hzD13KFzUs8ppjmuavA2RdXCAAB98vHIheGfB8vPj+7cZ-fGOcoNS2zmhb9or4LR3HC3urr9GIHFgPhyPCBpbHOXcCIGd68YJWO6gSvRzV0fVKHiAtanptx8YPXcsN42dbHmezYnJuSJdps3aHReDPtx3nZVg-p9bj3O-Ur2NZ9yONcljWj6Dm+2w0kPl2j63H6bH-VyxzWqzem1VGZJyPv2He6cs4Bnfg3CMud86eUAWAKKqV2KAEJrEIGJYqAGGGQA6wwpQwZJOioAgIQEAMeRgAVb0qIAR0VACQ5khFCaEMJYXMDhfChFiJkQoqIcwAB3TylFqJQDPDQyogBoyJGMhVC6FMLAGwnhAiRFSLkWAOYAgJABrpgmhQoogA1uXOBcWRrCFFKK4aosiVEaJ0SAA)
+
+ポイント
+
+- ありえないことをすると型が never になる
+
+```ts
+const d = {
+  a: () => 22
+}
+
+const f = () => 22
+
+type Foo<T> = T[keyof T]
+type Bar = Foo<typeof d>
+type Baz = Foo<typeof f>
+```
+
+この時
+
+```ts
+type Bar = () => number
+type Baz = never
+```
+
+になる等。
+
+これを使って、Record ではない時は value を返し、 Record の時は再帰的に `DeepReadonly` を呼ぶ。
