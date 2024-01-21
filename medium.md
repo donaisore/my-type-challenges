@@ -70,3 +70,14 @@ infer を使うことで、 Array から Union 型を得ることができる。
 
 - `K extends keyof R ? never` で既に存在してる key の追加を許可しない。
 - 再帰的に Chainable を呼ぶことで、 R に型が追加されていくイメージ
+
+### [Last of Array](https://github.com/type-challenges/type-challenges/blob/main/questions/00015-medium-last/README.ja.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCMCsEFoIBkCGBnALhA9gMwgEEAnY1AT0kQRtqoCNyiA7TACx2aYDEBXCABQABVKzy8AlBADEgWjlAWL4zUpCmCrSNEQFcxgeVU1UAHwRAygyA7BkBNUYBkMwOYMgewYAKuQAOAUwDKAY2IBLJ9gAsAHQADIAyDIAVxoAWmoCqDIAxDIB+DICaDPoQgLKJgOhKEAAG9lkQgEkMgOvKgIoMgGvKgFEMgIAMgLoMpoAA5oAx+qaAgZGABL6mgNHq+YAr8YmAcjaAFK6AIW6AVgzZaFgAPPYGefmA+dqAoxGA6gyAZgyA8gyABgzRgCIMgEAMKYDR8oASDIAODClZl5joVJjOLhDKxNAQALwQANoA5KhfADQQL70f6AjxfAC6t3uj1IACY3p8AMwA2EA6CQqGuCCYVDeAA2L3eE0wkye0CMwGAEBcAA9XB5MC4ACbYnAQegPL5gzEPHH4+FEjAkp6wilU2n0xkszBsjkwKiXLIpIwAcW8mAAErx6NZAF0egFioxKAaIZAFj-bEwmCc6AAXJTrh42IEAFboQI4YgAc2AcGATtQYBAwDUoAgAH1wxHIxGTMZANYMgGaGQA-DIBJhnygAwowCmimGoznQxBA2o7ljidNqTTGcwmehHlwPuCjO97GWK1XPoF295mHgXMQIAAlAGd7u95DgiAAfhQEGtEGYLgAbj3gyBs7nIxBAGMMgE6GQATDIBGhkTW9Xa-D+aD3gAtk53dgiw8AN4QACiAEdeKg8QCn3SXAyIABfCA8GIHAL0BIQ7wQB0PzxFxmA9Fx0GAXhMHxdAvkLaEPAwRCEQ+Khv0lSZX3fPFJhLD5YXrFEDAMP4CJ-BliLfD9yKFSYPmRCBURgaiYFo+ioEI38SRI1iKIEKRXiMaBYS4x9UBnLAfHggC+IUpTMBUj0AIEsAMRDE910AQmtTC3DdAGGGQB1hmPE8zzAUAqCMQBjyMAFW98kAR0VAEhzY0zQtK1bWAe1HRdN1PW9WBgFEdAAHce19f1DAgNz8kAaMjTXNS0bTtdAHWdV13S9H10BwPEUO8TgbiS2pADW5CxLD8rLAuC-Kwq9P0AyDIA)
+
+- 自分で書いた答えのポイント
+  - `[...infer _, infer L]` とすることで、配列の最後を得ることができる
+  - infer で array を展開し、最後の値を返す。
+- 別解
+  - `[any, ...T]` とすることで、any を先頭に足した 配列を作成する。
+  - `T['length']` で T の最後の要素を取得することができる。
