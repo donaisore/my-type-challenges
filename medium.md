@@ -88,3 +88,30 @@ infer を使うことで、 Array から Union 型を得ることができる。
 
 - array を展開して infer で型を得ることができる。
   - `T extends [...infer R, any]`
+
+### [Promise.all](https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.ja.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBMAMEFoIAUBOB7AtgSwM4FMA6AQwBtTJEFqbKAjATwgEEA7AFwAt1WmAxAK4QAFAAFiHAGYCAlBADEgWjlAWL4LiqVMSbyADhhwEwleSYiArmMDyqkahosefBECXDIBKGQPUMgKwZAVQyA1hkAdDIHKGV0AJhkA7BkBZRMB0JUAkhkB15UBFBkA15UBohkAi1MAHUwgAA1sDfGZyTIhAawZAaPUowA25OMAzBkB5BkADBkBVBkARBkAgBkBuI0AohkASBUB7Biyc+wAeABUAPkLAcwZAIQYkwFH9QEDIwBkGKY7APwZATQYWwGUGLYnAQAZM4cKewGPIwC8bBsAYhkB9BkAFX0Ac83CIic3rLMzM9lxKAGMeXHYED0dgIAEYIABeFD6eyEVD4XDoUgAN3wwgAzDIANy-f6A4G5aCQiAAFmgOKgf1YAKBMII6OJrHwAHdoSD8IMAahsKwAOajYTCeGIlH4AA0EHhACt8D92HIIaMIABvShQAjsYbYTD4dACdhChFI1ES0GwWASgDkknQ6Et2MoAF8HZRgMAIPgAB46WXsfAAEwg7HQEDoDmydI5AG1WAJMGHUBKyRKuTzeQBdca46n44kDAj5UjCKME+ygiWlgjQCuR9HpiDEXAQKkAmSUD6ZN5KgDi2HYAAkBHQJoAuj0AsVHrJKALH-OOx2DpcAAuN1fH6cQhS3CEdCoXnAODAKXEMAgYBGUAQAD615vt5vEB2RUAzQyAH4ZAJMMUUAGFGAU0Ur3f-5eECnkY-qyqQ6gONIrBytgPBsrkhYjB6np+qw-pNhIDBRpmwjImQAgIouEBRoQpHDOmMhEfmHKqlAUYANIQDyEAANb4Aw6CSBA5FEcwzLEH2AYjAxmZgI6ozniAf4AbeECAGMMgCdDEEgCNDC+CnSTJ15AWe2o6DugLsAwPoqhAACiACOAhkBKpner6ECOhAkj6BAlqiIZPoIGuZCkPgfIIsA+rYKQuCWkYLb4pGhbDAi7DglC1GFsW5YwBKdYNk2EVthFtLstFsVEglUXkMlErVvBsLCsaaKYvWjbNni2V4rlCHkDFAIMkVeUlVGKXldRcJGqKGIyBRYA5ZWeRtbFJJ5sVpCDMwGhaIMsbxvgqAQAAPhVBCrXGCajEdpWpRAdZtmAHkOD8jYIsSUaULZPpyoMFlWQtV2cS19j5QCKXUYMvVlWlmZHWKj12S9b1kIMn1cZNv3sP1kaA31EprQmoOjODUBPb6r2WTDcPfQW00dRKAMxgdG3o9TiYQBjG1YzjZmQ+wBPvbDRm6vD83tewJIUyjjOoNhR3Y2A6aSRpmkQIAhNYhApcmAMMMgDrDDLMnaWAoCUEqJyACreUSAI6KgCQ5pOM5zguy7AKu66btuu77rAwASLgzIbYex5QHrhuANGR06zvOS4rrga4bluO57geIpBf8usQIAugwhIAa3IhIATVGADIZFtB9btvhw7e5HieZ5AA)
+
+**関数における Generics の使い方。**
+  - 暗黙の型変換。型の制限。
+    - https://zenn.dev/miz_dev/articles/typescript-generics#%E9%96%A2%E6%95%B0-generics-%E3%81%AE-extends-%E3%81%AB%E3%82%88%E3%82%8B%E5%9E%8B%E5%88%B6%E7%B4%84
+    - https://www.typescriptlang.org/docs/handbook/2/generics.html
+
+**Mapped Types についての理解。**
+
+- Mapped types on tuples and arrays
+  - https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html#mapped-types-on-tuples-and-arrays
+  - https://scrapbox.io/mrsekut-p/Mapped_Tuple_Type
+    - ここも参考になりそう
+- Mapped Type
+  - https://typescriptbook.jp/reference/type-reuse/mapped-types
+  - こちらはパッと思い浮かぶ方。
+
+`keyof T` の `T` が tuple, array の時だけ挙動が違う。配列を返す(?)
+
+```ts
+type MapToPromise<T> = { [K in keyof T]: Promise<T[K]> };
+type Coordinate = [number, number];
+type PromiseCoordinate = MapToPromise<Coordinate>; // [Promise<number>, Promise<number>]
+```
