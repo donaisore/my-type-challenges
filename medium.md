@@ -115,3 +115,29 @@ type MapToPromise<T> = { [K in keyof T]: Promise<T[K]> };
 type Coordinate = [number, number];
 type PromiseCoordinate = MapToPromise<Coordinate>; // [Promise<number>, Promise<number>]
 ```
+
+### [Type Lookup](https://github.com/type-challenges/type-challenges/blob/main/questions/00062-medium-type-lookup/README.ja.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBsBMEFoIBUCeAHAphAMgezwGsBXdSRBSq8gI1QgEEA7AFwAs8n6AxYiACgACAQ1YAzYgEoIAYkC0coCxfWcSYBLTrIC2wsuRn6IgK5jA8qphyAVTUbA0eqBpBkCRDIE8nQFnagOwZrgJIZAejqByAw+B-eUBjBkAzBkA15UB0-UB1BkB9BkARBkBlBkALBkAZBkAhBkAohkA-BkBNBkAgBjMoeNdAJqjAGQzAcwZAewZAQAYAAwBhYRYIAB8IABE8AHNaiETYwDEGCEt1JghrQGsGQEdFQCwE7MBohghalgxMXv6BwFWGQGKGQB+GQGuGQEmGAJDqwD-tQB39Bc8IyJzcwBMGTPTqwFO5QGg5V0Bo+VdACIYBibVJb4IjmdAAHk6XVaEEaLAANBAAOQAE26SIAfL1XIAWDUAECqVJZQ3oeOogwhgyHdGFwxFIgDGTUx2PxhIaTRJEQWSQmgCsGLJ5ApLWrLADO5FUrEwACcxMJ6dg4RAAN7kKArLAALmRjJYSLVEBo0swmBRou1SIYdFFoslqlESJhSIAyhxpexhKppY62kj6sRpQAbH3IgBCmCYXWEwfIAF8hZKWDK5QqOtTVVB1asLWiuvrM4bjabzciABJ4FQokNI0PS1QsFiiVDV0PEQOB3MtvAADxl+cz9Lwgbw0otRrwAHcmNWJ2x65hqzRA-LCP34+QNdgALKoKEQAC8uAIFIhSraULpnYxEGAwAgmG7WHpSZREBYeEN2FqxPIItqQuvABxetS2IGhykALo9AFiohZACx-tgG3Qc1bxYUV6TYAA6AArUUMJHLpgDgYAsOEMAQGAMxQAgAB9Wi6PouiIHieIJkAZoZdmOQAMKMAU0UaIY-jqIgcjKLvTcj1BCFzERZBr0Pcx727JMmDNFVN21ZBYwgAB+YYIG1JhMAANxlABuMAxPJSkpJQBSlJU0UWDrSNZJVcgAG0AGkIElFAAF1tXkh87NFFU32zGzNJ0+T9KMmUwFjNzkF8yiQD4gT6IgQAxhkAToZAAmGQBGhl2bK0vS2ihIo1RNHQEdmjE5UIAAUQAR2IaNEQax9MGfCBNLEaU8E0ZFBE3BB0OjQMIy6TBRWAYgWFUQNRX1MBE2TeVFSaVysy1HUmVoIszQtK1UBtO0HSdV0arYT1vSdf0gxbSbo31ddVtlda02hDMwp21F0X2k1DrLCtlJbOsGybFs2w7dEnVDHs+3IQdh1HZFxynGc5yTRdl3pVd4rMMTmEq6MD1hTbz26QnVggRlRWmsm3PIDqnxYcFmtawNwUsiFie0QNL3RDFEShDFheZzrn3Zlro2549KT5trdr1YXyZYMX4TAZKwCo0qMsAQmtXGyzLAGGGQB1hhK0ryp18AoGvQBjyMAFW8PCmQBIczghCWCQzUULQzCcLw6UCKI0RRQnGViNIu2ICdjxAGjI+Z4MQ5DgFQ9DsNw-DCNgYBRSHObRnFaPAF0GVxADW5EpSiTr2U7T-3M6DyOyIooA)
+
+- in で loop のような動きをすること
+  - string に対して使うと、一度だけ loop してくれる。
+
+```ts
+type Foo<U, T extends string> = {
+  [K in T]: U
+}
+
+type Bar = Foo<'dog' | 'cat', 'bird'>
+// type Bar = {
+//     bird: "dog" | "cat";
+// }
+```
+
+- MappedTypes
+- Union に never が使われると、無視される。
+
+```ts
+type Foo = string | never | number
+// type Foo = string | number
+```
