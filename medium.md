@@ -195,3 +195,12 @@ never にはいかなる型も代入できないというエラーになる。
 K が Union 型の時、 一つずつ順番に loop する。
 
 - [この解説](https://github.com/type-challenges/type-challenges/issues/614) が非常に丁寧。
+
+### [Length of String](https://github.com/type-challenges/type-challenges/issues/359)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBMCcAcEC0EAyBTAdgcwC4AsIB7AMwgGVcAnASx0mSSeYYCMBPCABRuwgDEAhjggAKAALYkABwA2w9AEoIAYkC0coCxfVbnQBbOYJ1JZNHVUGywDFTYiArmMDyqlagADSrRwrZWPPhcRACwZAGBVADQZACIZAMQZAawZAQAZAcNNAdW1AdCVAK4ZAMYZAS4ZAa4ZAOwZAd1TAVQZAJIZACCjAdO9AdQZAPwZATQZAIAZnCAA+CABxUwAJAFdWQHMGQC6PQFiomsBohkAsf-xcXGkAZwAuYGBcGYBjfAA6ACsZ9aIqbGA4eGBNwTAQYCtQCAB9O-uH+4hAZQZnqMBmhkAfhkBJhiLADCjAKaKt0eIJuEAuVlw7Gk6DQPgIAHkSO46NgADwMcgQdAADx0mAAJjMIDNqKiADQMAAq2LxWCJJLJOAA2gBdCAAXggbLALS5WNx+IZLgAJABvOgkdBUAQAX3FkulEAASrKXAwAPxwnCI5FM9HK8nc9YmqlG-ispoMOYQKnMgDk3h1+HtrKsYGuoJBEDSgE6GQATDIBGhk+vuBXqeEJo+j2uAgUJhEDFEAAogBHLoWI3JnEwlax2UQEhUIi6CD28Tx9BINYWJ3YdAzYBdXA0WQze2Q6GwlaCGYNznchjZ3O4NFpjOyNEYZ1IlE4NH2+1NI0ABiay6HOfQebH6YsU-h+Fn+oXAGsuroaKeiEujQA2deUqDD7ej8f76e+Y8edH2qjoOhBFvCAAFZH03EddwnA8Zz1H8F3IIgukJABCFMumkfAiEwGgL2AgBGB8NzdD0QDDcMwUAQmscl9NJAGGGQB1hnI8NwUuUAGBaQBjyMAFW8ikAR0VAEhzUYJimWYFiWVYNm2XZ9kOBBgGEGYAHdpROM4oC43jAGjI8ZJmmeZFmWNYth2PYDiOYAZiIWRmxobCZg4iBAF0GHJADW5HJACaowAZDJE-TxKMqTTNk05zkuIA)
+
+- 文字列を配列に変換して、 `array['length']` で長さを測る
+- そのために Generics の二つ目に `T extends [] = []` を設定する
+- `Capitalize` 同様、 `S extends ${infer F}${infer R}` で、一文字目とそれ以外で分割できる
+- ↑ で取得した F を Generics で用意した T に突っ込み、最後に `T['length']` で長さを取得する。
