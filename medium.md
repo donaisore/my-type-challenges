@@ -204,3 +204,10 @@ K が Union 型の時、 一つずつ順番に loop する。
 - そのために Generics の二つ目に `T extends [] = []` を設定する
 - `Capitalize` 同様、 `S extends ${infer F}${infer R}` で、一文字目とそれ以外で分割できる
 - ↑ で取得した F を Generics で用意した T に突っ込み、最後に `T['length']` で長さを取得する。
+
+### [Flatten](https://github.com/type-challenges/type-challenges/blob/main/questions/00459-medium-flatten/README.ja.md)
+
+- [Answer](https://www.typescriptlang.org/play?ssl=24&ssc=1&pln=24&pc=31#code/PQKgUABBAsCsCcEC0EBiAbAhgF2wUwDtJklSziAjATwgC8ALAewFcqBLAWzYIHMIAKAAIBjehQBOjAJQQAxIFo5QFi+czOPGYqYYrJ0RAVzGB5VS1RAygyA7BkBNUYBkMwOYMgewZAgAyB15UCKDIDXlQMYMgfQZAsomB0JUAkhkBVhkBLhkBhhkAJhkA0ZUB1Bi9AaPUAwC-FQGylQE0GQGiGRMAPs0B5BkBR-UBAyMAZBkAhBkAohkA-BjTAIAZjCEBo+UAJBkAHBgAueoADbuwAZ2JsKgAHPAgAMyxcQggAXjRJ-AIAHgBtAEYAGggAJi2VgGYt6ABdPZWV2GOrgD4IYGAIda3diEOYLcvibs7624BxNjYAASzAoNkAXR6AWKjMoAsf-ouCGvTa9z6ogAdAArXpoxjiHjAODwYAYzBgEDALSgCAAfVpdPpdIgJhMgGsGQDNDIAfhkAkwwBQAYUYBTRRpDOF1Ig5K0gxG8xwiyWAGUIHgAB6LAAmvQgmAIVBWpwgABVFSrCOrNdrdbNHsdbjNiArlWqNStuGM8OIIAANLZon0ut0QACax2IAH5PUbHWadcGoFAwxgZYRVj60V6ICmg1t9ddiFA2tKpssVhm9cWffqth7rcR8-rKSAhSL6RBAGMMgE6GCKARoYOW3G03aWKKZwhrjsBBJaMAN4QACiAEdmJh0FsZ0qRsIxwBfcaSDgQADkggnSFES-QhB4eF6wGY2DY6F6+7AE7QloThdW1ZfwkwvSvlpWYhV3XbAlnnRd0CWd9ZV1a49mtOCgLXPANzAhclyghYkyeHYtjeE44MeTZcNeI4EI2JCQLQiDMMTItiJWbYbj2YimOuRCoGAlDQPAjDoOw1i9nw0tzkuK5rRY548KOD5yMo7jqL4rCi2nMZGEYfN9woVR92efM1gABggTctn3NTGG08R9wkx5VPUzTLN0nZ9KMkyD3Mxy5ODMB7ggI9eiQZUQMCtRcWfYZRjdSR3Tmfjln3NZ9xzHyG37ZtAEJrMw2xbMJAHWGPt+0HFLiFuQBjyMAFW8AkAR0VAEhzWF4WwRFkWAVF6ExbFcXxQlgC1XoAHc3WJUkoDKyrAGjIjI4QRJEUV6dEsRxPECQQYBekYdBbzYRgCH6EaIEAXQYzEANblLCsKbGpmlq5rahbOqGskKSAA)
+
+- Generics の二つ目に、配列を flat にした値を入れるための配列を用意する。(Length of String と同様)
+- 再帰的にFlatten を呼ぶ。
