@@ -225,3 +225,10 @@ type AppendToObject<T, U extends string, V> = {
   [K in keyof T | U]: K extends keyof T ? T[K] : V
 }
 ```
+
+### [Absolute](https://github.com/type-challenges/type-challenges/blob/main/questions/00529-medium-absolute/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCsBMCcEC0ECCAjAzgewDYFcAXAU0mSQsrPQE80A7AEwCdi6BpZgQxwDdMA1nQAUAAXSsAzAAYB3AGzwAxpgCUEAMQBbYowCW+LZq1dCAC00ktAB1yniSXHpLdcYMhs8QAivmKZCPWx6dygASRtcYh16QghzYggAAwwcAhIk+JprYgA6NCyc+LNTeK4BRIDmPXoAcwAaCHpDdGJmCGx29D1amsJ8gBUzROwiayIITDNR3EYIVoguCGtsTGc9XkTmrVb2qpra0IgAMU6IYgAPLkjSMiT7wkwyQmzEgf84gF5kAEZpaWerwgACV-PhcF80Fg8ERiAAed4BAB8EGAwHOFxyShIc0I2HmiQARH9pIS7vcjiiAGp6YgAdw69AgAHFnAAJfDoABcEDMhEI1kwXLRjyUZlyACtMLlOrVgHB4GAQMB3KAIAB9TVa7VaiAATVG7QAwthGIk2W1EjrrZqIMr3C8iqkYSQERiSExME0Wm0IAAfSaEap1f3zHp9FHfJIAEgA3gMAL6ZS4exhepJIOM1ABmvuBSYgAH4QRAeTH40nVSANTadRBEXEjTx-DXa7r7XobJ04o7ErGIABRACO+C4uEaA8xxGxEATEGzzGwRgA5KJe0gxWOonV-MAiHpcJhlw6gUpm17vgBtMiTrGEOHD0e4OHO9Lw6RIxrL6TLpGfm9TtiD4jmOL7Qm+cJIB+X4-n+9QAXewFPmBaSwnCfyfhAy5-L+-5QLe073o+oGvmhSDQJhy7QLh8H4YBREgc+pGut+v4wTRCGEUhJHgWhy5QWxWGwXhg70dxTG8SxOGUdJIkEUBxESahLHkYJVEcXRiGKShLrwkgPzqv80iGf89AyUZRkaaJWmMTpEHwOq8BOWZX5OU5HEALpVq2bbqic+DMAk7QAMokIKPltnaKqgGQKLBSUrAQDQhqTC6QT0EKvL8oKwrAKK4pSjKzBygqwBcBldJtLFEA0vSqXpOlmV8gKQoipgYqStKsryggwDKY11UALKdIkRolLg261P4PLNTlbUdYVspKiqQA)
+
+- template literal, infer を使って、 `-` とそれ以外の数字部分に分割する
+- template literal を使うことで number をstring に変換する
