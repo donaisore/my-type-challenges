@@ -211,3 +211,17 @@ K が Union 型の時、 一つずつ順番に loop する。
 
 - Generics の二つ目に、配列を flat にした値を入れるための配列を用意する。(Length of String と同様)
 - 再帰的にFlatten を呼ぶ。
+
+### [Append to object](https://github.com/type-challenges/type-challenges/blob/main/questions/00527-medium-append-to-object/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCsBMDsEC0ECCAHdBTAdgEwgBcB7CYgIwCssBjQyZJJ5h8gTzXwCcsOBpLgEMAzsQBuwgNYcAFAAFyPAMwAGSUIBsAThrCAlBADEAWyx4AlgFdjRitTpJJvYWAaH3EAIqWswwueIcVygASWN0ABssUxxCCEEiNmwiAAtBOME8PGF4iBwsAHcIADNzLAiCElSsCHNYrC5iwRosADoIABUUmsIknsEnHMJu1J4awS4Ac2tcQmF2rpriS0J0FYhhFOWKiHJxnDIqWjiC82HqvMKSsorW4IgAMWIuCCwAD0FwqPuAAz+5hi9ZIdXxxAC8EAA3rU8AAuCAAcgAjAiIABfQF9CAAJV8lgi4LQmFweA6xAA8kc6AAeEF+AA0iLEggiPgRjIALAA+CDAYCvN7YOhmIikPZQmHw5HsiDM1lYeEc9EMP4-e48gBqZSKgQgAHEzgAJSzkeEpQirYSwvlzGgpVqUebPSbAODwMAgYCuUAQAD6-oDgYDEAAmssXgBhYh4GqGho1IOJ-0QT2uIE1DDYfBkyn2Qi0xkAVQFhBJOT8XDqk0ZGp5EMhDAA2nxagcnGxiMVOhAAD4QQsAXXhLfepfwOXbne7AH5Os2BxB4RqwBiwD6k4nOqCIBGRL4-RvAymveZws84umJQBRACOlhZjKvguO6JKXGINgRcnTSDtLKiOCTL4wArOYETCAiaZYqWfhIhA9YMO2Uo0OkkFQHKPhSpMYw4JBq6XjBhBPkKhBwQhUBIYiKGEGhsosphiLYVguC0VspjwuQxDEFEghBPh0GgrA8FQohvBSngxCTKifaWPgWClPkeAMBhCqIgUKRnFgtHCLJ8KEFwPgrlBySEcRxxCeRECUQiElSb2ECyTGClmMp9GqQi6madpulEAZWAMGxqlIkZYAEaCSjCQ2FFiVRxAFLRKlSmw5QRHF3k4PCTTgf5-EmaCZl0BFlnWTQaWufKSUpWVUA6RlJQssI-lQMYXF1VljX2Y58l1C5uU1ChjU5BCjYMAV+a3veETUpmJI5lS+aEUijIIoFMqcdxWC8VyjKmc+dBIly22jXt413iy03EtmFLzdShGwMtq2MgdO35SdsCHfSx0kdSE3nTNV25sct3hctLWBDK7U1DJcnOXg21EK9JFKB9YADt6IAHoeyYPJYXDDA0EAAMqlugORY8GqagAwPKE2kPAQB2uMbNxoGBFaEDmpa1rALa9qOq0zquggwC8cIBQNNTEBalcoisv4bNmhapPc7zDpOlMQvwMAsuszgLhQDyACyzw1BGaQRABQHs5zys2sIdpqwLUwel6QA)
+
+
+- `Type Lookup` であったように、 string に対しても `K in keyof U` が使える。
+- `|` を使うことで、順番に展開して評価してくれる。
+
+```ts
+type AppendToObject<T, U extends string, V> = {
+  [K in keyof T | U]: K extends keyof T ? T[K] : V
+}
+```
