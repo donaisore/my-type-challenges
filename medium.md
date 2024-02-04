@@ -253,3 +253,27 @@ type AppendToObject<T, U extends string, V> = {
 - `Uncapitalize<T>` で頭を小文字にする
 - KebabCase を再起的に呼ぶ
 - 大文字が現れたら、 Uncapitalize を使って小文字にし、 `-` と一緒に template Literal を使って文字列を結合する。
+
+### [Diff](https://github.com/type-challenges/type-challenges/blob/main/questions/00645-medium-diff/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBsAsCsEC0EAiBLAZpyyn4NwCMBPCALQE0BlALxIGcIAKAASrsYEoIBiAWwCmAE3QBXfnwD2RAFaCAxgBcwuXuogBFMYIZL0UgHaqoAcUFKIAQ0MQABgHk5ipXYhKAFlcvomnwRCi2IIAToKGCgFEFgDuguH2Dm4AZIkAjHYmEAB8EABq6IIxEEYQpuhKABJiRABcEB5KSgAODLXAwEoMCh4AdLIMvVIhAObAcPBgIMCqoBAA+otLy0sQlFJiIRAAwlLCAZWhASsnixDTqkokzQEY2AA8DgA0EA5puQC8EADeuADaAGkIOhbABrQQkKSYV4QAA+EHBkOhb2sTCBggAHkpwsImIioa80hBUvjkRAAPwQQyCABuoQg9QBAF1GRBMdjDLiERCCSjKW9AUyGRB0VicXieWT+YLhdS6SEwABfS7XW5YTAOTAASQYDB0AEFDAw4iFHi83p9XvwKo9iYSXqSWA44YSuNlVGA5qcThAACq6SzbKwMXQLb3Lc4zdD8ZrDSxXG4-CAAUQAjmIrAAbF7JjE3ZQQRUQTAhKSSADkrATgiQPSzmfCI10wDE+kzDHLKsTADEpFIIF9flBDFYhPU9CEQSNcFYm+OlJPDNPldWIAAhKxbQe4EdjiATqczuf7heHqBNzmheqGCTRBUr1U7PsDn470eCeeL6fnnFXqm30IlS7AIFGDUMvj+XBc3zJR7jTDNM3uO5MHuXspBeDcQmyF5vggC99hCa8AK2RVsmwqC8xcOD0yzJD1XuTCXjQ7Ck3wv8b34O9CzIp4KJg6iELoh40JeXYpBY3DZw-E8vxeNjCP-Tj6VI8ioGgqj4No5D7jEpi+wk6xjwPJc5N-BSOK4lTeKZWYQDDcMzm7TZ-C2ahsVaeyHMjT1wCgXJqC8MIIEhTZ9ykTNWwMI16kaFo2g6Loen6QZhjGCZgBsY1AL8-JCmKBhwsiow2gaJpWnaTpuj6AYhlGcYEGAAqIv0YrcFyABZYYAm2LxMwbJddBisr4sqpKatSqYZiAA)
+
+- union と keyof を一緒に使うと、共通の key のみが返る。
+
+[参考](https://zenn.dev/t_keshi/articles/tips-typescript-2#keysofunion)
+
+```ts
+type Foo = {
+  name: string
+  age: string
+}
+type Bar = {
+  name: string
+  age: string
+  gender: number
+}
+
+type result = keyof (Foo | Bar) // "name" | "age"
+```
+
+↑ を使って、 Omit で共通の key を 削除する。
