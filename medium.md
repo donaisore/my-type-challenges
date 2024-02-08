@@ -337,3 +337,11 @@ type result = keyof (Foo | Bar) // "name" | "age"
 
 - (StartsWith と同じ)template literal と conditional type(infer) を使って、分解できるかを判定する。
 - `T extends ${string}${U} ? ` でも良いとのこと。Startswith も同じく
+
+### [PartialByKeys](https://github.com/type-challenges/type-challenges/blob/main/questions/02757-medium-partialbykeys/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBMDsCssIFoIAUCGAnALgSwwBsAhATwGkBTUgZ0hWUafoCNSIArAgOwHMaAFhm4QAFAAEuw-kO4BbSjgwBKCAGIFAEzwBXOeoD2LDpQDGOMPTXWIARR2Ua+A90tQAknIAOhSgu44EBgQvJTclFh4phAABpi4BCQU1DQAPAAqADQQ5AB8MRAA7gJRAhBKANaO5YUG5aRelEFYvHphgTHpBcKaseQxAHRufQU0jaZ4AGbsOAJNNIoQBpMQXlgGjQnVy7Fd5UKBggY6hL0LgTh1LE0bztxEAxAA6nMiMf0QeDQQ3AaBawYAG54TSUTTZPCHATHU4QOQYKpBQiEVbrTb4bZeO5ETg6JwQQh4RGzJq-LDwlFxbD4IgZfJDegAMQMWAglAAHhhvL5hjE+TgGo5TJEsfQ8AEIpMMKYmgBVBasgDe9Cg9wUAC4IE5InwVUFQpruHprlg9RhNJosI4aJrteLePQAL7DAWNCDyiLxGmEAByXKaAF50NTEmQqLRUh6sNkAORqygx3IQYDACCKn7+gD86rtfAA3PrKOqjXITQXzZbrTmcDreBBnVA+TFhkmAGp4SiFJYiADikIAEjoWJqBDgcF4bSmcDRTAIBhwaAMWbxgHBEGAQMBLKAIAB9fcHw8HiAATWOrIAwgZQRB+xEmkfH-uIJvLK6ml7Q8kI1kcmz2TgYSaN8VSkDs6QQEGoHgUmQYAPJyJCqTKlAADa4afCI0ErBBGDfBhHKAdwwF-pmOTUBAhqUICEQALrZhA6TodQtFgI6EAAGRpvQzHsOKEDYYxQT4RRhFAfhEBkeENGspq4a0ZqTHyWx2TSREuTbiAe5PkejGOIEF54dUOm6a+eDeCyFyCmmEAAKIAI46EQ2S2ey4yBOxkzrPoMbiO+yCzkQvh8I4wA6PghA0DGljioBWBSjK7oKtxqr+raNb2vQGAGj8xoRFlFpWjQNpahlurOmAsWStKcoKp+RB+goKUZgoDG5g6UDZUWuWlvlnWFVWpW1mxMUSvFNVJZ6IYNf6ACCxGzaEzXxm1ZUdYWDEliaBWVsV6XDRV74QKYRnfEGqH0K57mpA5TmEKk9VJOGaRRrG8aJtkUaPY1lC5LkmSXW5Zg4Ddjm0o9YYpJGCpvf6MYQAAPhAMZdR9k1YN9c0LaEf0A1AV3A6Dd0PdNT1Q1G-3BgktIU7j9AphAfk0MgHLuSzWDrKa+NA+YRPg6TkMRq9yPvYjyM6NwFS-IU3Bo19pM-XTrFgDuJmHhAjI6LgcysgAyoBE7aWru4vluoD0EmutCFaEBgVrWoGIQ4V4C4JWjuOk7ANOs7zouy6rggsDAMINCFH1EBth2XY0I7zuuyOY4TuqU4znOC5Li0AeIMAMdO3cdBQEmACyLJNBeQjImEoRu4nnve2nfstBuW5AA)
+
+- `Omit<A & B, never>` で、 A と B を合体させることができる
+  - https://github.com/type-challenges/type-challenges/issues/2814#issuecomment-1519609342
+- `{[K in keyof T as ...]?: string}` の形で ? をつけることで optional を表現できる
