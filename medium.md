@@ -431,3 +431,22 @@ mapped type で mapping してる時に、 `readonly` か、 `?(optional)` は�
 - [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBAs0OwEYIFoIC0CWAHSLn4NwCMBPCQWoZArhkFaGQQ4YIBHDAQwDsAPDCACgAEm2nAAzQEQgJQQAxAFsApgBMMAVxnSALsqwAbOWFxTDEAIrK5AZ3UYA9q31QAkqwgAVABYZzEAMJvm23VYAczkAGggATWtlCHM3aO0FCAwZHTl5VnUIZgh1Eiw5CAADTCwAHhdwgFUAPiLwl2zWJKqIGWVLCCJCopctXSLcIuH1c1w8gog5diwIAF50bDKAbQRwgCYAXXDl9QAnM3CAM39zOU2aiGBgKZm5AGN1RVzrLsLl1fD9s22IZfXjqdzpshsN7BBLgA1DByADuEFsEAA4hh1AAJZREABcEDc6nUWHMWOuo3ubgAdAArczk6x7ILAWCIMAgYD6UAQAD63J5vJ5kWiex81gUhTRcj2hT50u5EFZ+gmhVKFVuT2aXjYJGWv1a0zVCg1rC1vwASqq5Oqmsb5n8LvNcI09RaDX8MKwjhLXAAxcLkv1uj1ClwmkFQAD8EF17H1XmWAc9VR9ED95PjQqqIdw4cW5WD1RNOxTBb+LiTic2FyzEBxJtwNfZIC5Mr5rgsWW8zDOXmbLflKSwdKyiogAG8IABRBjKfzhcd3R4QAC+ECOe2sagA5LxFcgyf5AiFzMBlFZtOYNwr8oV7p2LDblrg5wVHmVJ9PtGVldqdhcfzUaqEj7zuor5Tv4n5LJ8EBbDs3xhCuQK-n8UFwb8-yAmewL-oBUBPg8IFvuBX5rNB4QAMxoRuCAbuEG7rBuSEfCRVEMTsAIQHRDEXABQHPgRYEfl+aEkexFEAba2G8fhoHvhB5RMRsFY7GJOwKdBvwUdxgEgmAHI9ryEBesoezqG4noAMpPISTb6ZycpsqAuCXOZfiShAJCCrE1jaCeNisESuL4oSxLAKSFLUrS9KMvACDAGw5iwhKTkQNCcJeT5Vi2AFeIEkSJLmGSVI0nSDJMrF5jeb5WXJQAsnShS+PuFqHjiOXBflhURSVLJskAA)
 
 - 結果格納用の array を用意する
+
+### [IsTuple](https://github.com/type-challenges/type-challenges/blob/main/questions/04484-medium-istuple/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBAs0BzQgWggSQM4BUCuAHANgKaTJJnkkBGAnhAFYCWAhgHYDm6AFqxABQACjVh24sAtoQAuTAJQQAxBIAmDbGIWS8RMCXl6IARWyF0khgHsWOqKjEFCElpIhMIk6rkIQABr4w57X28AGggAd04GAGNONyYAaxMXFggGFlxsZ3dPH19MIOSlCAAnKWxilnRwzika4tzvfN9Uqs17Nw9CADprCAAxc3rCAA8mOyIALl6g7JMo4oZcSRJZiCimdEIARggAXjQsLUIAHgBtFjVKQmKAXQA+CGBgN2LjFc61jcIAJj2DgKIx1KTCUlnwtHOl2u90ez0kr2IUFW602AGY-v4jscLmIrsVTjCnhAAGZMfCbEhBXoPABqDEIYQglggAHEGJIABLYSgTCCcSSSXDoCZPSToGJdOjoLqDNjAWAIMAgYA6UAQAD6mq12q1EAAmuZyhAAMLmJReDnXLw6m2aiDKsCrTH2Y6YO77U6YG4QEaSQgsJRVc6EABu0JIAH4SWSKVBeZgfcM-QGqgAlQggsHUACCxWKTGox2wLHiLHMYRYdxIUCjOLxieTgYgmFOAHIiOxJJxWzdq1AIFHSeTEf24y83qPeUPNgBuHSrAAy-rYXddDf9TdY1AJD32Lfby67Pbni8PnAA8sSAV59kvO5wznXoXcTx87yuL8Tc-naLez9ioXxe45zAIknUOF03T+BNfQ3NMM1BFhwW-AsixLMsKweKN9w7D8e3XFMICfepBxjLxeXhYwICnMiQLVW0bWbExnGNL4qgYnV7RVBg7EGLIPgAbwgABRABHbAyVCYThk8KJnAAXxJYpzHUVt+FmJAYjJXCTGATIGHJVt5w+FEkg9EhpNkyRjjEiT8GOZ1AR3UJKMIO47mCCyZMIOSbPEskHIgpziPuFyEXczyoEsnzrNsgLHJOYFEPBCBTi2ULxzcjyvKsvy7MC69jiE3Cu15HZ5I86NhwinKYry+KgpOYjnKqzYaqi7zfLi+yEuxUNrkq6css83tQJADUON1Ppyi7a4IAAZT9IUJsm9UuLGkgHnm7hSggahDXqdBzHwfTLGFPkBSFEVgDFCUpRlYo5QVaBgFYdAwmuTaIDpBkICOk6zDO3l+UFYVRXFThJWlWV5XgF7-tOyovoAWUGLxjW4fAdPOkGrvBu7ocepUVSAA)
+
+- [ReadonlyArray](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#improvements-for-readonlyarray-and-readonly-tuples) が存在する。
+  - readonly な array (tuple) を表す。
+  - ただし、 array も true になるので、考慮が必要
+
+```ts
+type Length<T extends any[]> = T['length'];
+// 1
+type LengthOfTuple = Length<[number]>;
+// number
+type LengthOfArray = Length<number[]>;
+```
+
+tuple の `length` をとると、長さが数字で取れるが、 array は number が取れる。
+そのため、 number extends T['length'] で array か tuple かを判定できる
