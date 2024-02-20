@@ -528,3 +528,14 @@ export type Equals<X, Y> =
 type a = Exclude<1 | 2 | 3 | 4, 2 | 3>
 // 1 | 4
 ```
+
+### [Combination](https://github.com/type-challenges/type-challenges/blob/main/questions/08767-medium-combination/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?ssl=26&ssc=1&pln=28&pc=1#code/PQKgUABBAcDsBssIFoIGED2BbARgSwDsBDAFzwwMhWRtqpwE8IAJbBgU3YgGlCBzCAAoAAqywd2vAnwCUEAMRZ2AEzwBXLAqIAnbUSbyiAByMAbPAGNS5AgoDOJbfzBV5biAEU17BzZdQAcTwAN3ZbInDdfQgMADMIBydpOwAaCGUMCAAFdm0sNRJrCggAMnRsfGIyCgA6KgBJEgByOwgiUztMtTt2WLVTCFiMbQgSAAsuI20MI1GGIx8IcwBrLmC8ZXZMgG0LCkcMDoAZPAcAXUExkhIjOwAuYGBN0NMZ3JqsDAAvPFNTIhqwz4wDCyAAqgBlJ4YCx2YAAdXYOGAAEEsvVgMwACoAWSOOJUeCIAFFTOwlAQSMA9pTpsdTiQZP4IAADNkkOxUR4QdgADwWFhIKlGmRwXBZACIhhgJRAAD4QCU4HSyhVKohfVWK6UQZXaLVSjCinS6jUGnXKzXy7VG01fU3663qkbSg16wa2y1uk1ep3uy0emV+jWB732i0q4P2vVhh2hllUEjzLjcdgMVoAXnKuEIRQIAB5tk1pU00k09aWIOWNU0zgA+KhshNUOsQABqeHYAHcYrYgiRmGocHcIFcbvdHhyLGMagArOyA7TAuCIMAgYAuUAQAD6u73+73EAAmhg1CNMJsWLkuAfb7uIOuXEmFtnKnn81iebyhQRlK1Evw2xnGkKJ-BAWZYtsBAaGK2jARAjTkuBECgaYDZQFmiGaHyP5-gkjjOFAUAAPwIUKmgKiyAAkADeWEAL4QLRmA5lUNiFvBxK8hYphqJs+aoWkWF1nW9EJkREAjgQ7ChNoADcm7AKM2jeFAYDPlwEIEdIYIEDYXG4XYWlJAIWZNEQTTWuWlk4WEeEAdIECkY4qkjrE7Q9JuIA7neB4QFiPgkOgRA9K0vl+Y+eBYEYwxBRpEA0RAxIAI5qO0aRcQKQWMbE0yaE0wgacg07tGS0g+MABS-HYTRPsmEBWKFyHbFQmXsIK+YpWlpj5ixb7VAWRYlmWFYjTW9ZliWVkVtNNZWRG2iWQqxaej6c3LRGXxLVWm0Ott1Yuka+3uptx1rVts0jAGU3LddR2zeGq2LQ9e0vSdR0iSkYBnF5PnhfeABiZ7jLkEBaewtx-f9D4bqALZg2MOhcAwp4jJ0vEDfco7XLcDzAFOM7zouy4ILAwARHYXa5PDHbdgkhxVRQWNjrjk52NOc4LkCwArmT6OMwQnJQK2OLDFwaCI38YR8D4I4sxO+Ps4TXNLmuG5AA)
+
+- Array[number] で union として扱えるので、Union を loop して string literal で結合する
+- union の extends string は true になる
+```ts
+// true  
+type StringUnionExtendsString = 'a' | 'b' extends string ? true : false
+```
