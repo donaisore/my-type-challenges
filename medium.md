@@ -557,3 +557,18 @@ T extends `${infer F}${infer R}`
   ? R extends `${string}${F}${string}`
   : false
 ```
+
+### [FirstUniqueCharIndex](https://github.com/type-challenges/type-challenges/blob/main/questions/09286-medium-firstuniquecharindex/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBCcBMAcA2CBaCAxAlgJwM4BcBVAO0wEcBXAUwGEALAQ2wEliATKgD0lRT-54AjAJ4QAVpgbEA5rkbEIACgACEqbPkBbKvgYBKCAGJtbTBU1GC2TDLA9DDiAEVqBTAHtidqAHFMANyoFBggrG2lQgBoIADMbNgh8OipYnAIIYk8UbCoAByoGfHCIAGNGbAYS-CpsCBs6-AgpBJz8CmwFTHxcOvYuADoIZhiGiDZ3Kh7Mxq5MAmjW9oUUAEZBxVZcXJwqBJEIAG0AGyodEvcOCABmeAB2AF1FOnx8XNwALmBgE7OLqn7zppgLlsO5BCdNLhgHE8PgUBRSJQqCgykxKtVsCgbCgGCgwjJgHo9N4IAA+CAANUwVAA7hBPBA-PgABIUQTvCDPV4fL7dMr9MS4frubDSYBwJBgEDAOygCAAfUVSuVSogAE13O0IDQ-hBmTUUiqjYqINK7PhhPkMGkiIjqPQmKwOJwADwAFQgXGq7B6+Ok0QAMp7ON62D0EQBrTI04gHe4QAC8h3u5ITPA9XqCYYgAHIczwoAB+VArAsQDkZkNZnoAAwAJABvGwxGoYAC+jebrYASm2a2Wixhg6GegGDsRzIIavcB1AIMWsLCSOR7eUnVwXd3ogd+ruA9F0CnZ1AOd3h9WIPWG36Ow30Leb-258+5wubcukQ6WH1XVvDrv+n3DAjxfF8OTHHMThkJIcxnUCOWIKhAmwWUQAVY0VQgN1JkaGgGFwSZ0Iw1UzUwTRchFRoLStBsIAAUUoBgjmiOjOHyKoIDbWJQQsHNlGo5FUSOKDpEmYAKCKI5cHzMABNKfDCKTA4eFY9j8BdBiKCYl1FwID9V0dH8XUg058HODgc1JaIAAZSSslS2KoKoNMYo4dPfO1aDXIzIPcQIfjMv5LOiWA7MiBy1JcrS3N020Vy8wznWMhgGEEQRgpLMKIqc9TNO02L9IS78krzKzMvsqBVJyqL8o8+Kv3XV0cxShgMtWLKZzAOViOVDB2iSVsAGVqjeIietNGVQB4clBvKFJhE1WpcHcI4JI8YgPk5F43k+YA+ToAUhRFMUJUQYApFwGkammylqTpZbVqKTxNq5HbeVwflBWFUVxQQM6HrW56boAWRFFIHWEoJRJe7aeT2j6Dq+46pRlIA)
+
+```ts
+F extends L[number] ? :
+```
+
+がポイント。
+
+```ts
+// true
+type A = 'a' extends 'a' | 'b' ? true : false
+```
