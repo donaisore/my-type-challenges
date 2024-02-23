@@ -663,3 +663,7 @@ type a = Foo<[1]>
 // ["0", "1", "2"]
 type b = Foo<['a', 'b', 'c']>
 ```
+
+### [Triangular number](https://github.com/type-challenges/type-challenges/blob/main/questions/27152-medium-triangular-number/README.md)
+
+- [Answer](https://www.typescriptlang.org/play?#code/PQKgUABBBMDsCMBWaEC0EAqAnAlgQwDsBzAVwBs8sICSBbAIwFMtI1V2PX6BPa8siAAoAAngDOAdxwExANxwArPNwCUEAMS1GAExx0NAFxIAHMow2UsyjbTwGAFmFbqXEAIolGYgzgD2BJygAcRxZRgIIPD4GZggAOQAaCAAzaW0IB3M4hwzcQlIKKhoYrCScADpGcogAA3gIAGoYRogAZhbyzpa4msCIAD4IADUcRgkIfwgQgwAJEnoALgh7AwNjMQXgYAMxAGN7coUxct8sImA4JGgwEGAnUAgAfWeX15eIAE1fEioAYV9tOYZsxzG8wc8ILcnAZuMZzNh8MRyJQADxxCCMAAeBnC2jE0SYpQgAAUMdjcfjioSANoAXQgAF4IHSkgBBMk4gh4gnMOmM5m0wYM1jE6kAcjMxAcYvpWM53LirCgAH4IKzxZKiNLaUqIEsEflkVg0UlqQAGJKdcrE2mmq2sy2dYlJM2C+4gJ7gt6YLwGCC-cReT1e95QnC0YynP0wuEQADeEAAogBHEh4MhJROYuG7P0AXxSWF8tAgYuEMcYqH26c1XmAJB8ZDEYuhsPMu0D+KZ1NYWZzBhRKbTZBRBqRhRRZv6Lv60972cYucHqfTo7y49R8GnEC3c6gfcXA6Hq7HBVRrW3ADZZwl5-3l8O14iz8b4FOkohEDe74eHyf1y+KLQO+MBvt++4Lkux4jqeRoop+25IAALFOe5JpBR4rjBAFwW+IGIGaBHfjqYAPCGrwQAAYj8mRUAAyji6zBuRkJ3KArCDHR9iUOY3DfFQYi+GQDZ+DISwrGsGxbDs+yHMcpznJcyDAIQkjMBxwyjOMgnCT4-gbMsqzrJs2x7AcRwnGcFwIMpOkifpGkALKnOYvzcWQtYGRJxnSWZcmWUQNx3EAA)
